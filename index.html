@@ -3,26 +3,105 @@
   <head>
     <title>my first webpage</title>
     <style>
-      img {
-        width: 300px;
-        border-radius: 10px;
-        float: left;
-        margin-right: 10px;
+      body {
+        margin: 0;
+        padding: 0;
       }
-      p.introduction {
+      section {
+        margin: auto;
+        width: 1300px;
+        padding: 100px;
+      }
+      header {
+        background-color: blanchedalmond;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        width: 1300px;
+        padding: 100px;
+      }
+      section.linabell {
+        display: flex;
+        flex-direction: row;
+        background-color: blanchedalmond;
+      }
+      section.self {
+        background-color: white;
+      }
+      section.where {
+        background-color: white;
+      }
+      img.headeri {
+        width: 250px;
+        border-radius: 80;
+      }
+      img.hi {
+        width: 150px;
+      }
+      img.circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+      p.titl {
         font-size: large;
         font-weight: bold;
+        padding: 20px;
       }
-      p.more {
+      p.intro {
         font-size: medium;
+        padding: 20px;
       }
     </style>
   </head>
   <body>
-    <img src="images/linabell.png" alt="玲娜贝儿" />
-    <p class="introduction">玲娜贝儿</p>
-    <p class="more">
-      这是玲娜贝儿，一只粉色的大狐狸，达菲的好朋友，喜欢吃鸡腿🍗
-    </p>
+    <header>
+      <img class="headeri" src="images/jun.jpg" alt="self" />
+      <p class="intro">大家好，我是王骏。这是一个关于我的网站。</p>
+    </header>
+    <section class="self">
+      <li>
+        <img class="circle" src="images/ly.jpeg" alt="linabell" />
+        我喜欢旅游
+      </li>
+      <li>
+        <img class="circle" src="images/bqb.jpeg" alt="linabell" />
+        我喜欢收藏可爱表情包
+      </li>
+      <li>
+        <img class="circle" src="images/hj.jpeg" alt="linabell" />
+        我还喜欢很酷的火箭🚀
+      </li>
+    </section>
+    <section class="linabell">
+      <p>这些是我喜欢的可爱的东西们：</p>
+      <figure>
+        <img class="headeri" src="images/linabell.png" alt="linabell" />
+        <figcaption>这是玲娜贝儿，一只粉色的大狐狸，达菲的好朋友</figcaption>
+      </figure>
+      <figure>
+        <img class="headeri" src="images/nailong.jpeg" alt="nailong" />
+        <figcaption>这是奶龙，他的大肚肚，真的很酷酷</figcaption>
+      </figure>
+      <figure>
+        <video
+          controls
+          src="videos/xionger.mp4"
+          width="250"
+          height="150"
+        ></video>
+        <figcaption>这是小熊二滴滴答答滴滴哒</figcaption>
+      </figure>
+    </section>
+    <section class="where">
+      <li>
+        我来自广州
+        <img class="circle" src="images/guangzhou.jpg" alt="guangzhou" />
+      </li>
+      <li>
+        现在我在这个地方
+        <img class="circle" src="images/bu.jpeg" alt="bu" />
+      </li>
+    </section>
   </body>
 </html>
