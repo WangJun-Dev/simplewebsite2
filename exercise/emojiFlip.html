@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ch">
+  <head>
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body.emojiFlipp {
+        display: flex;
+        flex-direction: inherit;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .emoji {
+        font-size: 8rem;
+        cursor: pointer;
+        user-select: none;
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="emojiFlipp">
+    <div>
+      <div class="emoji close active" id="monkeyClose">🙈</div>
+      <div class="emoji open" id="monkeyOpen">🙉</div>
+      <div class="emoji earth active" id="earth">🌏</div>
+      <div class="emoji moon" id="moon">🌖</div>
+    </div>
+    <div>
+      <div class="emoji smile active" id="faceSmile">🙂</div>
+      <div class="emoji celebrate" id="faceCelebrate">🥳</div>
+      <div class="emoji cow active" id="cow">🐂</div>
+      <div class="emoji burger" id="burger">🍔</div>
+    </div>
+    <script>
+      const closeFace = document.querySelector("#monkeyClose");
+      const openFace = document.querySelector("#monkeyOpen");
+      const smile = document.querySelector("#faceSmile");
+      const celebrate = document.querySelector("#faceCelebrate");
+      const earth = document.querySelector("#earth");
+      const moon = document.querySelector("#moon");
+      const cow = document.querySelector("#cow");
+      const burger = document.querySelector("#burger");
+
+      closeFace.addEventListener("click", () => {
+        if (openFace.classList.contains("open")) {
+          openFace.classList.add("active");
+          closeFace.classList.remove("active");
+        }
+      });
+
+      openFace.addEventListener("click", () => {
+        if (closeFace.classList.contains("close")) {
+          closeFace.classList.add("active");
+          openFace.classList.remove("active");
+        }
+      });
+
+      smile.addEventListener("click", () => {
+        if (smile.classList.contains("smile")) {
+          celebrate.classList.add("active");
+          smile.classList.remove("active");
+        }
+      });
+
+      celebrate.addEventListener("click", () => {
+        if (celebrate.classList.contains("celebrate")) {
+          smile.classList.add("active");
+          celebrate.classList.remove("active");
+        }
+      });
+
+      cow.addEventListener("click", () => {
+        if (cow.classList.contains("cow")) {
+          burger.classList.add("active");
+          cow.classList.remove("active");
+        }
+      });
+      burger.addEventListener("click", () => {
+        if (burger.classList.contains("burger")) {
+          cow.classList.add("active");
+          burger.classList.remove("active");
+        }
+      });
+
+      earth.addEventListener("click", () => {
+        if (earth.classList.contains("earth")) {
+          moon.classList.add("active");
+          earth.classList.remove("active");
+        }
+      });
+      moon.addEventListener("click", () => {
+        if (moon.classList.contains("moon")) {
+          earth.classList.add("active");
+          moon.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
