@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ch">
   <head>
-    <title>我是王骏</title>
+    <title>my first webpage</title>
     <style>
       body {
         margin: 0;
@@ -51,6 +51,34 @@
       p.intro {
         font-size: medium;
         padding: 20px;
+      }
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s ease;
+      }
+      .popup.show {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.5s ease;
+      }
+      .popup-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        max-width: 500px;
+        text-align: center;
       }
     </style>
   </head>
@@ -105,6 +133,28 @@
     </section>
     <section>
       <a href="exercise/emojiFlip.html">Flipping Emojis</a>
+    </section>
+    <section>
+      <div class="popup" id="myPopup">
+        <div class="popup-content">
+          <h2>隐私协议</h2>
+          <p>相信我哈，应该是不会偷咱的数据的</p>
+          <button onclick="closePopup()">相信</button>
+        </div>
+      </div>
+      <script>
+        function closePopup() {
+          document.getElementById("myPopup").classList.remove("show");
+        }
+        setTimeout(function () {
+          document.getElementById("myPopup").classList.add("show");
+        }, 3000);
+        function openPopup() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+      </script>
+      <button onclick="openPopup()">隐私协议</button>
     </section>
   </body>
 </html>
