@@ -1,3 +1,11 @@
+const {
+    initializeApp,
+    getFirestore,
+    doc,
+    onSnapshot,
+    updateDoc,
+  } = window;
+  
 const firebaseConfig = {
     apiKey: "AIzaSyDPGDfIq5ykubrOY-ZtOcuUf51wjNzYoVM",
     authDomain: "juntestone-e6fd8.firebaseapp.com",
