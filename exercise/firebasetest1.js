@@ -1,13 +1,14 @@
 // Replace with your Firebase configuration object
 const firebaseConfig = {
-    apiKey: "AIzaSyDPGDfIq5ykubrOY-ZtOcuUf51wjNzYoVM",
-    authDomain: "juntestone-e6fd8.firebaseapp.com",
-    projectId: "juntestone-e6fd8",
-    storageBucket: "juntestone-e6fd8.appspot.com",
-    messagingSenderId: "234781401442",
-    appId: "1:234781401442:web:87fd50538b0b96c38f0c3b",
-    measurementId: "G-Z77NWRQGXJ"
+    apiKey: "AIzaSyDSdmGGlMTx5XN3lWK6tDZMmWgsq2lORis",
+    authDomain: "fbt2-c417b.firebaseapp.com",
+    projectId: "fbt2-c417b",
+    storageBucket: "fbt2-c417b.appspot.com",
+    messagingSenderId: "152500425726",
+    appId: "1:152500425726:web:c278c616a691e8838566af",
+    measurementId: "G-K9T8WJYYST"
   };
+  
   
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
