@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Converter</title>
+  <script>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const response = await fetch('/convert', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const downloadLink = document.getElementById('download-link');
+        downloadLink.innerHTML = 'Download converted file';
+        downloadLink.href = url;
+        downloadLink.download = response.headers.get('Content-Disposition').split('filename=')[1];
+      } else {
+        alert('An error occurred during file conversion.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Convert Word to PDF and PDF to Word</h1>
+  <form onsubmit="handleSubmit(event)">
+    <input type="file" name="file" accept=".pdf,.docx">
+    <button type="submit">Convert</button>
+  </form>
+  <a id="download-link" style="display: block"></a>
+</body>
+</html>
